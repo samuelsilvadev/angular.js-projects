@@ -21,10 +21,11 @@
 			</p>
 		</section>
 		<div class="attempts">
+			<p  class="attempts__guesses-left">Guesses left :: {{ guesses }}</p>
 			<p class="attempts__final-word">{{ displayWord }}</p>
 			<form>
 				<input type="text" placeholder="Try a letter.." ng-model="input.letter">
-				<button class="btn" type="button" ng-click="letterChosen()">Go</button>
+				<button class="btn" type="button" ng-click="letterChosen()" ng-disabled="isDisabled">Go</button>
 			</form>
 		</div>
 		<section class="hangman-app__score">

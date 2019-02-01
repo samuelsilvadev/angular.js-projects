@@ -21,6 +21,7 @@ body {
 	justify-content: space-between;
 }
 
+.attempts__guesses-left,
 .attempts__final-word {
 	text-align: center;
 }

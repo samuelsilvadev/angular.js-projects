@@ -22,6 +22,7 @@
 			$scope.input = {
 				letter: '',
 			};
+			$scope.isDisabled = false;
 
 			$scope.letterChosen = function letterChosen() {
 
@@ -44,12 +45,19 @@
 					if ($scope.incorrectLetters.indexOf($scope.input.letter) === -1) {
 						$scope.incorrectLetters.push($scope.input.letter);
 					}
+
+					if($scope.guesses > 0) {
+						$scope.guesses--;
+					} else {
+						$scope.isDisabled = true;
+					}
 				}
 
 				$scope.input.letter	= '';
 			}
 
 			function newGame() {
+				$scope.isDisabled = false;
 				$scope.wordToFigureOut = generateAWord();
 				$scope.correctLetters = [];
 				$scope.incorrectLetters = [];
