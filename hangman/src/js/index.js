@@ -25,25 +25,26 @@
 			$scope.isDisabled = false;
 
 			$scope.letterChosen = function letterChosen() {
-
-				const hasLetter = $scope.wordToFigureOut && $scope.wordToFigureOut.indexOf($scope.input.letter) !== -1;
+				const letter = $scope.input.letter.toLowerCase();
+				const wordToFigureOutLowerCase = $scope.wordToFigureOut.toLowerCase();
+				const hasLetter = wordToFigureOutLowerCase && wordToFigureOutLowerCase.indexOf(letter) !== -1;
 
 				if (hasLetter) {
-					const letterIndex = $scope.wordToFigureOut.indexOf($scope.input.letter);
+					const letterIndex = wordToFigureOutLowerCase.indexOf(letter);
 
 					$scope.displayWord = $scope.displayWord
 						.split('')
-						.map(function(letter, index) {
+						.map(function(character, index) {
 							if(index === letterIndex) {
-								return $scope.input.letter;
+								return letter;
 							}
-							return letter;
+							return character;
 						}).join('');
 
-					$scope.correctLetters.push($scope.input.letter);
+					$scope.correctLetters.push(letter);
 				} else {
-					if ($scope.incorrectLetters.indexOf($scope.input.letter) === -1) {
-						$scope.incorrectLetters.push($scope.input.letter);
+					if ($scope.incorrectLetters.indexOf(letter) === -1) {
+						$scope.incorrectLetters.push(letter);
 					}
 
 					if($scope.guesses > 0) {
