@@ -20,3 +20,12 @@ body {
 	height: 90vh;
 	justify-content: space-between;
 }
+
+.attempts__final-word {
+	text-align: center;
+}
+
+.hangman-app__score > h2 {
+	font-size: 16px;
+	font-weight: bold;
+}
