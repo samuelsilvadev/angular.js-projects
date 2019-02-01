@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #eceff1;
+	overflow: hidden;
+}
+
+.hangman-header {
+	height: 10vh;
+	text-align: center;
+}
+
+.hangman-app {
+    align-items: center;
+	display: flex;
+	height: 90vh;
+	justify-content: space-between;
+}
