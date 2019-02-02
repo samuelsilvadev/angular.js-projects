@@ -14,13 +14,14 @@
 		<h1 class="hangman-header__title">{{ name }}</h1>
 	</header>
 	<main class="hangman-app container">
-		<section class="hangman-app__score">
+		<section class="hangman-app__score card">
 			<h2>Your incorrect guesses</h2>
 			<p class="hangman-app__letters">
 				<span ng-repeat="letter in incorrectLetters">{{ letter }}</span>
 			</p>
 		</section>
 		<div class="attempts">
+			<div class="attempts__chart"></div>
 			<p  class="attempts__guesses-left">Guesses left :: {{ guesses }}</p>
 			<p class="attempts__final-word">{{ displayWord }}</p>
 			<form>
@@ -28,7 +29,7 @@
 				<button class="btn" type="button" ng-click="letterChosen()" ng-disabled="isDisabled">Go</button>
 			</form>
 		</div>
-		<section class="hangman-app__score">
+		<section class="hangman-app__score card">
 			<h2>Your correct guesses</h2>
 			<p class="hangman-app__letters">
 				<span ng-repeat="letter in correctLetters">{{ letter }}</span>

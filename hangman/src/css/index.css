@@ -18,7 +18,26 @@ body {
     align-items: center;
 	display: flex;
 	height: 90vh;
-	justify-content: space-between;
+}
+
+.hangman-app > * {
+	flex-grow: 1;
+}
+
+.hangman-app__letters {
+	line-height: 1.5;
+	min-height: 3rem;
+	padding: 0 1rem;	
+}
+
+.attempts {
+	flex-grow: 2;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.attempts__guesses-left {
+	font-weight: bold;
 }
 
 .attempts__guesses-left,
@@ -29,4 +48,6 @@ body {
 .hangman-app__score > h2 {
 	font-size: 16px;
 	font-weight: bold;
+	margin-top: 1rem;
+	padding: 0 1rem;
 }
