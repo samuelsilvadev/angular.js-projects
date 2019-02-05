@@ -70,6 +70,7 @@ body {
 .slice__circle {
 	stroke-dasharray: 440;
 	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 1s linear;
 }
 
 .chart__guesses {

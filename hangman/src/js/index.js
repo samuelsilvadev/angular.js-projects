@@ -13,10 +13,14 @@
 		.controller('HangmanController', HangmanController);
 	
 		function HangmanController($scope) {
+			const circunferenceDonutChart = 440;
+			const totalGuesses = 6;
+			const circlePiece = circunferenceDonutChart / totalGuesses;
+
 			$scope.name = 'Hangman';
 			$scope.correctLetters = [];
 			$scope.incorrectLetters = [];
-			$scope.guesses = 6;
+			$scope.guesses = totalGuesses;
 			$scope.displayWord = '';
 			$scope.wordToFigureOut = '';
 			$scope.input = {
@@ -55,6 +59,13 @@
 				}
 
 				$scope.input.letter	= '';
+			}
+
+			$scope.getChartStyle = function getChartStyle() {
+				return {
+					'stroke-dasharray': circunferenceDonutChart,
+					'stroke-dashoffset': circunferenceDonutChart - (circlePiece * $scope.guesses),
+				};
 			}
 
 			function newGame() {
