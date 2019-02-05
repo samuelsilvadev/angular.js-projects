@@ -21,7 +21,14 @@
 			</p>
 		</section>
 		<div class="attempts">
-			<div class="attempts__chart"></div>
+			<div class="chart card">
+				<p class="chart__guesses">{{ guesses }}</p>
+				<svg class="slice" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+					<g>
+						<circle class="slice__circle" r="69.85699" cy="81" cx="81" stroke-width="15" stroke="#26a69a" fill="none"/>
+					</g>
+				</svg>
+			</div>
 			<p  class="attempts__guesses-left">Guesses left :: {{ guesses }}</p>
 			<p class="attempts__final-word">{{ displayWord }}</p>
 			<form>
